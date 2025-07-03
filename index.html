@@ -4,28 +4,37 @@
   <meta charset="UTF-8">
   <title>Final Notu Hesaplayıcı</title>
 </head>
-<body style="background-color: black; color: white; font-family: sans-serif; padding: 20px; font-size: 20px;">
-  <h1 style="font-size: 32px;">Final Notu Hesaplayıcı</h1>
+<body style="background-color: black; color: white; font-family: sans-serif; margin: 0; display: flex;">
 
-  <p>Komite notlarını gir (0-100):</p>
-  <input type="number" id="k1" min="0" max="100" placeholder="Komite 1" style="font-size: 24px; padding: 8px;"><br>
-  <input type="number" id="k2" min="0" max="100" placeholder="Komite 2" style="font-size: 24px; padding: 8px;"><br>
-  <input type="number" id="k3" min="0" max="100" placeholder="Komite 3" style="font-size: 24px; padding: 8px;"><br>
-  <input type="number" id="k4" min="0" max="100" placeholder="Komite 4" style="font-size: 24px; padding: 8px;"><br>
-  <input type="number" id="k5" min="0" max="100" placeholder="Komite 5" style="font-size: 24px; padding: 8px;"><br><br>
+  <!-- SOL: Hesaplayıcı -->
+  <div style="flex: 1; padding: 20px; font-size: 20px;">
+    <h1 style="font-size: 32px;">Final Notu Hesaplayıcı</h1>
 
-  <p>SRP notunu gir (0-3):</p>
-  <input type="number" id="srp" min="0" max="3" step="0.1" placeholder="SRP" style="font-size: 24px; padding: 8px;"><br><br>
+    <p>Komite notlarını gir (0-100):</p>
+    <input type="number" id="k1" min="0" max="100" placeholder="Komite 1" style="font-size: 24px; padding: 8px;"><br>
+    <input type="number" id="k2" min="0" max="100" placeholder="Komite 2" style="font-size: 24px; padding: 8px;"><br>
+    <input type="number" id="k3" min="0" max="100" placeholder="Komite 3" style="font-size: 24px; padding: 8px;"><br>
+    <input type="number" id="k4" min="0" max="100" placeholder="Komite 4" style="font-size: 24px; padding: 8px;"><br>
+    <input type="number" id="k5" min="0" max="100" placeholder="Komite 5" style="font-size: 24px; padding: 8px;"><br><br>
 
-  <p>Dönem seç:</p>
-  <select id="donem" style="font-size: 24px; padding: 8px;">
-    <option value="1">Dönem 1</option>
-  </select><br><br>
+    <p>SRP notunu gir (0-3):</p>
+    <input type="number" id="srp" min="0" max="3" step="0.1" placeholder="SRP" style="font-size: 24px; padding: 8px;"><br><br>
 
-  <button onclick="hesapla()" style="background-color: gold; color: black; padding: 12px 24px; font-size: 24px;">Hesapla</button>
+    <p>Dönem seç:</p>
+    <select id="donem" style="font-size: 24px; padding: 8px;">
+      <option value="1">Dönem 1</option>
+    </select><br><br>
 
-  <div id="sonuc" style="font-size: 24px; margin-top: 20px; white-space: pre-line;"></div>
+    <button onclick="hesapla()" style="background-color: gold; color: black; padding: 12px 24px; font-size: 24px;">Hesapla</button>
 
-  <script src="final_hesaplayici.js"?v=1.1></script>
+    <div id="sonuc" style="font-size: 24px; margin-top: 20px; white-space: pre-line;"></div>
+  </div>
+
+  <!-- SAĞ: Görsel -->
+  <div style="flex: 0 0 30%; display: flex; align-items: center; justify-content: center; padding: 10px;">
+    <img src="https://github.com/tetyag/ker1/blob/main/IMG_1373.jpeg?raw=true" alt="Görsel" style="max-width: 100%; height: auto; border: 2px solid gold;">
+  </div>
+
+  <script src="final_hesaplayici.js"></script>
 </body>
 </html>
