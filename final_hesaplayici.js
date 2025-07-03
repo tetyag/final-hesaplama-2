@@ -10,7 +10,7 @@ function hesapla() {
   let ort = (k1 + k2 + k3 + k4 + k5) / 5;
   let toplamSoru = ((ort * 0.582) + srp - 59.5) / 0.194;
   toplamSoru = Math.abs(toplamSoru);
-  toplamSoru = Math.ceil(toplamSoru);
+  toplamSoru = Math.round(toplamSoru);  // Artık tam sayıya yuvarlıyoruz
 
   let dersler = {};
   let toplamFinalSorusu = 0;
@@ -37,13 +37,36 @@ function hesapla() {
     toplamFinalSorusu += dersler[key];
   }
 
+  // Orantılı dağılım ve küsuratları tut
+  let dagilim = [];
+  for (let key in dersler) {
+    let oran = dersler[key] / toplamFinalSorusu;
+    let tamDeger = toplamSoru * oran;
+    dagilim.push({
+      ders: key,
+      deger: tamDeger,
+      tam: Math.floor(tamDeger),
+      kusurat: tamDeger - Math.floor(tamDeger)
+    });
+  }
+
+  // Toplam tam sayıları topla
+  let suAnkiToplam = dagilim.reduce((sum, d) => sum + d.tam, 0);
+  let fark = toplamSoru - suAnkiToplam;
+
+  // Küsuratlara göre sırala ve farkı dağıt
+  dagilim.sort((a, b) => b.kusurat - a.kusurat);
+  for (let i = 0; i < fark; i++) {
+    dagilim[i].tam += 1;
+  }
+
+  // Sonucu yaz
   let sonucText = `Finalde yapılması gereken minimum soru sayısı: ${toplamSoru}\n`;
   sonucText += "Derslere göre dağılım:\n";
 
-  for (let key in dersler) {
-    let oran = dersler[key] / toplamFinalSorusu;
-    let gerekli = Math.ceil(toplamSoru * oran);
-    sonucText += `${key}: ${gerekli} soru\n`;
+  dagilim.sort((a, b) => a.ders.localeCompare(b.ders));  // Dersleri alfabetik sırala (isteğe bağlı)
+  for (let d of dagilim) {
+    sonucText += `${d.ders}: ${d.tam} soru\n`;
   }
 
   document.getElementById('sonuc').innerText = sonucText;
