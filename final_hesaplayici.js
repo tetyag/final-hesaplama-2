@@ -37,14 +37,14 @@ function hesapla() {
     toplamFinalSorusu += dersler[key];
   }
 
-  let sonucText = "<strong>Finalde yapılması gereken minimum soru sayısı:</strong> " + toplamSoru + "<br>";
-  sonucText += "Derslere göre dağılım:<br>";
+  let sonucText = `Finalde yapılması gereken minimum soru sayısı: ${toplamSoru}\n`;
+  sonucText += "Derslere göre dağılım:\n";
 
   for (let key in dersler) {
     let oran = dersler[key] / toplamFinalSorusu;
     let gerekli = Math.ceil(toplamSoru * oran);
-    sonucText += key + ": " + gerekli + " soru<br>";
+    sonucText += `${key}: ${gerekli} soru\n`;
   }
 
-  document.getElementById('sonuc').innerHTML = sonucText;
+  document.getElementById('sonuc').innerText = sonucText;
 }
