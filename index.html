@@ -17,9 +17,14 @@
   <p>SRP notunu gir (0-3):</p>
   <input type="number" id="srp" min="0" max="3" step="0.1" placeholder="SRP" style="font-size: 24px; padding: 8px;"><br><br>
 
+  <p>Dönem seç:</p>
+  <select id="donem" style="font-size: 24px; padding: 8px;">
+    <option value="1">Dönem 1</option>
+  </select><br><br>
+
   <button onclick="hesapla()" style="background-color: gold; color: black; padding: 12px 24px; font-size: 24px;">Hesapla</button>
 
-  <h2 id="sonuc" style="font-size: 28px; margin-top: 20px;"></h2>
+  <div id="sonuc" style="font-size: 24px; margin-top: 20px;"></div>
 
   <script src="final_hesaplayici.js"></script>
 </body>
