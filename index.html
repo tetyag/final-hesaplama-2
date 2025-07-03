@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Final Notu Hesaplayıcı</title>
+</head>
+<body style="background-color: black; color: white; font-family: sans-serif; padding: 20px;">
+  <h1>Final Notu Hesaplayıcı</h1>
+
+  <p>Komite notlarını gir (0-100):</p>
+  <input type="number" id="k1" min="0" max="100" placeholder="Komite 1"><br>
+  <input type="number" id="k2" min="0" max="100" placeholder="Komite 2"><br>
+  <input type="number" id="k3" min="0" max="100" placeholder="Komite 3"><br>
+  <input type="number" id="k4" min="0" max="100" placeholder="Komite 4"><br>
+  <input type="number" id="k5" min="0" max="100" placeholder="Komite 5"><br><br>
+
+  <p>SRP notunu gir (0-3):</p>
+  <input type="number" id="srp" min="0" max="3" step="0.1" placeholder="SRP"><br><br>
+
+  <button onclick="hesapla()" style="background-color: gold; color: black; padding: 10px;">Hesapla</button>
+
+  <h2 id="sonuc"></h2>
+
+  <script src="final_hesaplayici.js"></script>
+</body>
+</html>
