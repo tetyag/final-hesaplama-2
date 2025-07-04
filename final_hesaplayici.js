@@ -68,3 +68,30 @@ function hesapla() {
 
   document.getElementById('sonuc').innerText = sonucText;
 }
+// Supabase bağlantısını başlat
+const SUPABASE_URL = 'https://mvdnenxxvotspxqqnvjb.supabase.co';  // kendi Supabase URL'ni buraya koy
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12ZG5lbnh4dm90c3B4cXFudmpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2NTM4NDYsImV4cCI6MjA2NzIyOTg0Nn0.OEPc8tB9b4NvONGFDrvgzjPVxOprjAbL4BcDB6FTifg';
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+async function hesapla() {
+  let k1 = parseFloat(document.getElementById('k1').value) || 0;
+  let k2 = parseFloat(document.getElementById('k2').value) || 0;
+  let k3 = parseFloat(document.getElementById('k3').value) || 0;
+  let k4 = parseFloat(document.getElementById('k4').value) || 0;
+  let k5 = parseFloat(document.getElementById('k5').value) || 0;
+  let srp = parseFloat(document.getElementById('srp').value) || 0;
+  let donem = document.getElementById('donem').value;
+
+  // Veriyi Supabase'e gönder
+  let { data, error } = await supabase
+    .from('final_notu')
+    .insert([{ k1, k2, k3, k4, k5, srp, donem }]);
+
+  if (error) {
+    console.error("Supabase ekleme hatası:", error);
+  } else {
+    console.log("Veri eklendi:", data);
+  }
+
+  // Buraya hesaplama kodların gelir (önceki hesaplama fonksiyonu)
+}
