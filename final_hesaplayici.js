@@ -69,8 +69,8 @@ function hesapla() {
   document.getElementById('sonuc').innerText = sonucText;
 }
 // Supabase bağlantısını başlat
-const SUPABASE_URL = 'https://mvdnenxxvotspxqqnvjb.supabase.co';  // kendi Supabase URL'ni buraya koy
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12ZG5lbnh4dm90c3B4cXFudmpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2NTM4NDYsImV4cCI6MjA2NzIyOTg0Nn0.OEPc8tB9b4NvONGFDrvgzjPVxOprjAbL4BcDB6FTifg';
+const SUPABASE_URL = https://mvdnenxxvotspxqqnvjb.supabase.co;  // kendi Supabase URL'ni buraya koy
+const SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im12ZG5lbnh4dm90c3B4cXFudmpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2NTM4NDYsImV4cCI6MjA2NzIyOTg0Nn0.OEPc8tB9b4NvONGFDrvgzjPVxOprjAbL4BcDB6FTifg;
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 async function hesapla() {
